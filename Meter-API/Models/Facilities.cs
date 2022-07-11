@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Meter_API.Models
 {
 
-    [Table("Facilities")]
+    [Table("facilities")]
     public class Facilities
     {
         [Key]

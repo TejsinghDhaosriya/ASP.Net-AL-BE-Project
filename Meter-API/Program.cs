@@ -1,6 +1,5 @@
+using Meter_API.Repositories;
 using Microsoft.EntityFrameworkCore;
-using Meter_API.Repositories.Cities;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -25,9 +24,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
 app.UseAuthorization();
 
 app.MapControllers();
 
 app.Run();
+
