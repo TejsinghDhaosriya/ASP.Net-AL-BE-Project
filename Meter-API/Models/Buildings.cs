@@ -4,8 +4,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Meter_API.Models
 {
 
-    [Table("cities")]
-    public class Cities
+    [Table("buildings")]
+    public class Buildings
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
