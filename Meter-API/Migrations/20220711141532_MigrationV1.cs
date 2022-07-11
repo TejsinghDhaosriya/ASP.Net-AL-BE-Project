@@ -18,6 +18,7 @@ namespace Meter_API.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     name = table.Column<string>(type: "text", nullable: false),
                     active = table.Column<bool>(type: "boolean", nullable: false),
+                    pincode = table.Column<int>(type: "integer", nullable: false),
                     createdDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     lastModifiedDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
                 },
@@ -27,7 +28,7 @@ namespace Meter_API.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Facilities",
+                name: "facilities",
                 columns: table => new
                 {
                     id = table.Column<long>(type: "bigint", nullable: false)
@@ -40,9 +41,9 @@ namespace Meter_API.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Facilities", x => x.id);
+                    table.PrimaryKey("PK_facilities", x => x.id);
                     table.ForeignKey(
-                        name: "FK_Facilities_cities_Citiesid",
+                        name: "FK_facilities_cities_Citiesid",
                         column: x => x.Citiesid,
                         principalTable: "cities",
                         principalColumn: "id");
@@ -64,9 +65,9 @@ namespace Meter_API.Migrations
                 {
                     table.PrimaryKey("PK_buildings", x => x.id);
                     table.ForeignKey(
-                        name: "FK_buildings_Facilities_Facilitiesid",
+                        name: "FK_buildings_facilities_Facilitiesid",
                         column: x => x.Facilitiesid,
-                        principalTable: "Facilities",
+                        principalTable: "facilities",
                         principalColumn: "id");
                 });
 
@@ -143,8 +144,8 @@ namespace Meter_API.Migrations
                 column: "Facilitiesid");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Facilities_Citiesid",
-                table: "Facilities",
+                name: "IX_facilities_Citiesid",
+                table: "facilities",
                 column: "Citiesid");
 
             migrationBuilder.CreateIndex(
@@ -178,7 +179,7 @@ namespace Meter_API.Migrations
                 name: "buildings");
 
             migrationBuilder.DropTable(
-                name: "Facilities");
+                name: "facilities");
 
             migrationBuilder.DropTable(
                 name: "cities");
