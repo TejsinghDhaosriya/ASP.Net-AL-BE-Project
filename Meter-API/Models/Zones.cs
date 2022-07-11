@@ -1,11 +1,12 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics.Metrics;
 
 namespace Meter_API.Models
 {
 
-    [Table("cities")]
-    public class Cities
+    [Table("zones")]
+    public class Zones
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -15,7 +16,7 @@ namespace Meter_API.Models
 
         public bool active { get; set; }
 
-        public ICollection<Facilities> facilities { get; set; }
+        public ICollection<Meters> meters { get; set; }
         public DateTime createdDate { get; set; }
 
         public  DateTime lastModifiedDate { get; set; }

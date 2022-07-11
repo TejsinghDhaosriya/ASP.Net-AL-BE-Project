@@ -4,9 +4,10 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Meter_API.Models
 {
 
-    [Table("cities")]
-    public class Cities
+    [Table("meters")]
+    public class Meters
     {
+        
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long id { get; set; }
@@ -14,10 +15,19 @@ namespace Meter_API.Models
         public string name { get; set; }
 
         public bool active { get; set; }
-
-        public ICollection<Facilities> facilities { get; set; }
+        
+        public string type { get; set; }
         public DateTime createdDate { get; set; }
 
         public  DateTime lastModifiedDate { get; set; }
+
+      
     }
+        
+    public enum MeterType
+    {
+        Electricity,
+        Water
+    };
+
 }

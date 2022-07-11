@@ -12,7 +12,7 @@ builder.Services.AddSwaggerGen();
 
 // Connect to PostgreSQL Database
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-builder.Services.AddDbContext<CitiesDbContext>(options =>
+builder.Services.AddDbContext<MetersDbContext>(options =>
     options.UseNpgsql(connectionString));
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();

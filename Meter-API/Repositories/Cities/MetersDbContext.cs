@@ -2,9 +2,9 @@
 
 namespace Meter_API.Repositories.Cities
 {
-    public class CitiesDbContext:DbContext
+    public class MetersDbContext:DbContext
     {
-        public CitiesDbContext(DbContextOptions<CitiesDbContext> options) : base(options)
+        public MetersDbContext(DbContextOptions<MetersDbContext> options) : base(options)
         {
         }
 
