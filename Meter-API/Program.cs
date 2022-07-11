@@ -1,4 +1,6 @@
 using Meter_API.Repositories;
+using Meter_API.Services.Impl;
+using Meter_API.Services.Interface;
 using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +10,10 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+
+//per request object
+builder.Services.AddScoped<ISearchService, SearchService>();
 
 // Connect to PostgreSQL Database
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
