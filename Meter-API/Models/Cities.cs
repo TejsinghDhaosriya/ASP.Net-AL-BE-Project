@@ -9,14 +9,14 @@ namespace Meter_API.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        private long id;
+        public long id { get; set; }
 
-        private string name;
+        public string name { get; set; }
 
-        private bool active;
-        
-        private DateTime createdDate;
+        public bool active { get; set; }
 
-        private DateTime lastModifiedDate;
+        public DateTime createdDate { get; set; }
+
+        public  DateTime lastModifiedDate { get; set; }
     }
 }
