@@ -17,7 +17,7 @@ namespace Meter_API.Models
 
         public int pincode { get; set; }
 
-        public ICollection<Facilities> facilities { get; set; }
+        public  ICollection<Facilities> facilities { get; set; }
         public DateTime createdDate { get; set; }
 
         public  DateTime lastModifiedDate { get; set; }

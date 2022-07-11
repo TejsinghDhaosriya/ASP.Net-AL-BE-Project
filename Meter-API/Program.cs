@@ -14,6 +14,7 @@ builder.Services.AddSwaggerGen();
 
 //per request object
 builder.Services.AddScoped<ISearchService, SearchService>();
+builder.Services.AddScoped<IMeterRepository, MeterRepository>();
 
 // Connect to PostgreSQL Database
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");

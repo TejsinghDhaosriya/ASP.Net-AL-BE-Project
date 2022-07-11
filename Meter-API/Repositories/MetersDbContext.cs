@@ -8,7 +8,6 @@ namespace Meter_API.Repositories
         public MetersDbContext(DbContextOptions<MetersDbContext> options) : base(options)
         {
         }
-
         public DbSet<Cities?> Cities { get; set; }
         public DbSet<Buildings?> Buildings { get; set; }
         public DbSet<Facilities?> Facilities { get; set; }
