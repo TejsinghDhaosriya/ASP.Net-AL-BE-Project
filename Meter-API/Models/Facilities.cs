@@ -15,6 +15,8 @@ namespace Meter_API.Models
 
         public bool active { get; set; }
 
+        public ICollection<Buildings> buildings { get; set; }
+
         public DateTime createdDate { get; set; }
 
         public  DateTime lastModifiedDate { get; set; }

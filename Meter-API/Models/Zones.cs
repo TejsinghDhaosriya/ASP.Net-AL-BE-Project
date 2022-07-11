@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics.Metrics;
 
 namespace Meter_API.Models
 {
@@ -15,6 +16,7 @@ namespace Meter_API.Models
 
         public bool active { get; set; }
 
+        public ICollection<Meters> meters { get; set; }
         public DateTime createdDate { get; set; }
 
         public  DateTime lastModifiedDate { get; set; }

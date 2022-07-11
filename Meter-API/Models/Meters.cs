@@ -15,8 +15,8 @@ namespace Meter_API.Models
         public string name { get; set; }
 
         public bool active { get; set; }
-
-        public MeterType type { get; set; }
+        
+        public string type { get; set; }
         public DateTime createdDate { get; set; }
 
         public  DateTime lastModifiedDate { get; set; }
