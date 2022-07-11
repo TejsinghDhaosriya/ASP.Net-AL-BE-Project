@@ -1,6 +1,6 @@
 ﻿using Meter_API.Domain.requests;
 
-namespace Meter_API.Repositories
+namespace Meter_API.Repositories.Interface
 {
     public interface IMeterRepository
     {

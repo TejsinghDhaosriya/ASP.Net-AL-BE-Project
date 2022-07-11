@@ -1,5 +1,6 @@
 ﻿using Meter_API.Domain.requests;
 using Meter_API.Repositories;
+using Meter_API.Repositories.Interface;
 using Meter_API.Services.Impl;
 using Microsoft.EntityFrameworkCore;
 
