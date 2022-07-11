@@ -3,6 +3,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Meter_API.Models
 {
+
+    [Table("Cities")]
     public class Cities
     {
         [Key]

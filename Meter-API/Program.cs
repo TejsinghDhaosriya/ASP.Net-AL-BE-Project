@@ -1,4 +1,13 @@
+using Microsoft.EntityFrameworkCore;
+using Meter_API.Repositories.Cities;
+
 var builder = WebApplication.CreateBuilder(args);
+
+
+// Connect to PostgreSQL Database
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddDbContext<CitiesDbContext>(options =>
+    options.UseNpgsql(connectionString));
 
 // Add services to the container.
 
