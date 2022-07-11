@@ -16,7 +16,12 @@ builder.Services.AddSwaggerGen();
 
 //per request object
 builder.Services.AddScoped<ISearchService, SearchService>();
-builder.Services.AddScoped<IMeterRepository, MeterRepository>();
+
+builder.Services.AddScoped<ICitiesRepository, CitiesRepository>();
+builder.Services.AddScoped<IFacilitiesRepository, FacilitiesRepository>();
+builder.Services.AddScoped<IBuildingsRepository, BuildingsRepository>();
+builder.Services.AddScoped<IFloorsRepository, FloorsRepository>();
+builder.Services.AddScoped<IZonesRepository, ZonesRepository>();
 
 // Connect to PostgreSQL Database
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
