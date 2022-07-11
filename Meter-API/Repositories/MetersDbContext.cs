@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Meter_API.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Meter_API.Repositories
 {
@@ -8,11 +9,11 @@ namespace Meter_API.Repositories
         {
         }
 
-        public DbSet<Models.Cities> Cities { get; set; }
-        public DbSet<Models.Buildings> Buildings { get; set; }
-        public DbSet<Models.Facilities> Facilities { get; set; }
-        public DbSet<Models.Floors> Floors { get; set; }
-        public DbSet<Models.Meters> Meters { get; set; }
-        public DbSet<Models.Zones> Zones { get; set; }
+        public DbSet<Cities?> Cities { get; set; }
+        public DbSet<Buildings?> Buildings { get; set; }
+        public DbSet<Facilities?> Facilities { get; set; }
+        public DbSet<Floors?> Floors { get; set; }
+        public DbSet<Meters?> Meters { get; set; }
+        public DbSet<Zones?> Zones { get; set; }
     }
 }

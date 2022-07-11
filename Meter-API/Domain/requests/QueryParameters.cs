@@ -4,13 +4,13 @@ public class QueryParameters
 {
     public QueryParameters()
     {
-        this.facilityName = "";
+        this.name = "";
         this.startDate = "";
         this.endDate = "";
         this.informationAt = "";
     }
 
-    public string facilityName { get; set; }
+    public string name { get; set; }
 
     public string startDate { get; set; }
 
