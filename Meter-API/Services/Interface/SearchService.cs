@@ -1,6 +1,6 @@
 ﻿using Meter_API.Domain.requests;
+using Meter_API.Facade;
 using Meter_API.Repositories;
-using Meter_API.Repositories.Interface;
 using Meter_API.Services.Impl;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,8 +9,8 @@ namespace Meter_API.Services.Interface;
 public class SearchService : ISearchService
 {
     private readonly MetersDbContext _context;
-    private readonly IMeterRepository _meterRepository;
-    public SearchService(MetersDbContext dbContext, IMeterRepository meterRepository)
+    private readonly IMeterFacade _meterRepository;
+    public SearchService(MetersDbContext dbContext, IMeterFacade meterRepository)
     {
         _context = dbContext;
         _meterRepository = meterRepository;

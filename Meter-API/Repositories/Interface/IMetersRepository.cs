@@ -2,8 +2,8 @@
 
 namespace Meter_API.Repositories.Interface
 {
-    public interface IBuildingsRepository
+    public interface IMetersRepository
     {
-        IEnumerable<Buildings> FindAll();
+        IEnumerable<Meters> FindAll();
     }
 }

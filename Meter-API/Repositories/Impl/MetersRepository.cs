@@ -4,20 +4,20 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Meter_API.Repositories.Impl
 {
-    public class ZonesRepository:IZonesRepository
+    public class MetersRepository:IMetersRepository
+
     {
         private readonly MetersDbContext _context;
 
-        public ZonesRepository(MetersDbContext context)
+        public MetersRepository(MetersDbContext context)
         {
             _context = context;
         }
 
 
-        public IEnumerable<Zones> FindAll()
+        public IEnumerable<Meters> FindAll()
         {
-            return _context.Zones
-                .Include(z => z.meters);
+            return _context.Meters;
         }
     }
 }

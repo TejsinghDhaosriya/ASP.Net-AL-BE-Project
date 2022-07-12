@@ -1,8 +1,8 @@
 ﻿using Meter_API.Domain.requests;
 
-namespace Meter_API.Repositories.Interface
+namespace Meter_API.Facade
 {
-    public interface IMeterRepository
+    public interface IMeterFacade
     {
         object GetSearchDataByInformationAtAndNameParam(QueryParameters queryParameters);
         object GetSearchDataByInformationAt(string req);
