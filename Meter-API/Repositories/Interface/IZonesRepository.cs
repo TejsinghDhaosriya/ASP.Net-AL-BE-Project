@@ -5,7 +5,6 @@ namespace Meter_API.Repositories.Interface
 {
     public interface IZonesRepository
     {
-        IEnumerable<Zones> FindAll(QueryParameters queryParameters);
-        IEnumerable<Zones> FindAllByName(string qpName);
+        List<Zones> FindAll(QueryParameters query);
     }
 }

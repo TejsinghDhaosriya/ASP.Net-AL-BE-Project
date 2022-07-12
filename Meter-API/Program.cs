@@ -37,7 +37,8 @@ builder.Services.AddDbContext<MetersDbContext>(options =>
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 var app = builder.Build();
-
+// For enabling legacy npqsql mode to fetch data in dates.
+AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {

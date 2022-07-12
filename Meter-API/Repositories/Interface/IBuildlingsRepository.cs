@@ -5,8 +5,7 @@ namespace Meter_API.Repositories.Interface
 {
     public interface IBuildingsRepository
     {
-        IEnumerable<Buildings> FindAll(QueryParameters qp);
-
-        IEnumerable<Buildings> FindAllByName(string qpName);
+        List<Buildings> FindAll(QueryParameters qp);
+        
     }
 }

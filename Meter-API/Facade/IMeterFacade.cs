@@ -5,10 +5,6 @@ namespace Meter_API.Facade
 {
     public interface IMeterFacade
     {
-        object findAllByInformationAtAndName(QueryParameters queryParameters);
-        object findAllByInformationAt(string req);
-        IEnumerable<Cities> findAllCitiesData();
-        IEnumerable<Cities> findAllCitiesDataByName(string qpName);
         object? findAllByParam(QueryParameters qp);
     }
 }
