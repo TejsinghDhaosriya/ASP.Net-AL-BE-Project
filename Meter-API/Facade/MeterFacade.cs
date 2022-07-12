@@ -1,6 +1,5 @@
 ﻿using Meter_API.Domain.requests;
 using Meter_API.Exceptions;
-using Meter_API.Repositories;
 using Meter_API.Repositories.Interface;
 
 namespace Meter_API.Facade;
@@ -14,10 +13,8 @@ public class MeterFacade : IMeterFacade
     private readonly IZonesRepository _zonesRepository;
     private readonly IMetersRepository _metersRepository;
 
-    public MeterFacade(MetersDbContext dbContext, IFacilitiesRepository facilitiesRepository, IBuildingsRepository buildingsRepository, IFloorsRepository floorsRepository, IZonesRepository zonesRepository, ICitiesRepository citiesRepository, IMetersRepository metersRepository)
-    {
-        _context = dbContext;
-        _facilitiesRepository = facilitiesRepository;
+    public MeterFacade(IFacilitiesRepository facilitiesRepository, IBuildingsRepository buildingsRepository, IFloorsRepository floorsRepository, IZonesRepository zonesRepository, ICitiesRepository citiesRepository, IMetersRepository metersRepository)
+    { _facilitiesRepository = facilitiesRepository;
         _buildingsRepository = buildingsRepository;
         _floorsRepository = floorsRepository;
         _zonesRepository = zonesRepository;
