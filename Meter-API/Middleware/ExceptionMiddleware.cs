@@ -1,11 +1,10 @@
 ﻿using System.Net;
 using Meter_API.Domain.response;
-using Meter_API.Models;
 using Microsoft.AspNetCore.Diagnostics;
 
 namespace Meter_API.Middleware
 {
-    public static class ExceptionMiddlewareExtensions
+    public static class ExceptionMiddleware
     {
         public static void ConfigureExceptionHandler(this IApplicationBuilder app)
         {

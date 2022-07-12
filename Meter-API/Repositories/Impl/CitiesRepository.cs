@@ -16,7 +16,7 @@ public class CitiesRepository : ICitiesRepository
         _context = context;
     }
 
-    public IEnumerable<Cities> FindAll(QueryParameters qp)
+    public List<Cities> FindAll(QueryParameters qp)
     {
         IQueryable<Cities> query =  _context.Cities
             .Include(c => c.facilities)
@@ -31,16 +31,7 @@ public class CitiesRepository : ICitiesRepository
         if (!ApiUtils.IsEmpty(qp.endDate))
             query = query.Where(c => c.createdDate <= DateTime.Parse(qp.endDate));
 
-        return query;
+        return query.ToList();
     }
 
-    public IEnumerable<Cities> FindAllByName(string name)
-    {
-        return _context.Cities.Where(c=>c.name == name)
-            .Include(c => c.facilities)
-            .ThenInclude(f => f.buildings)
-            .ThenInclude(b => b.floors)
-            .ThenInclude(f => f.zones)
-            .ThenInclude(z => z.meters);
-    }
 }

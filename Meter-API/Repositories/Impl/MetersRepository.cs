@@ -1,6 +1,7 @@
 ﻿using Meter_API.Domain.requests;
 using Meter_API.Models;
 using Meter_API.Repositories.Interface;
+using Meter_API.Utils;
 using Microsoft.EntityFrameworkCore;
 
 namespace Meter_API.Repositories.Impl
@@ -16,19 +17,17 @@ namespace Meter_API.Repositories.Impl
         }
 
 
-        public IEnumerable<Meters> FindAll()
+        public List<Meters> FindAll(QueryParameters qp)
         {
-            return _context.Meters;
+            IQueryable<Meters> query =  _context.Meters;
+            if (!ApiUtils.IsEmpty(qp.name))
+                query = query.Where(c => c.name == qp.name);
+            if (!ApiUtils.IsEmpty(qp.startDate))
+                query = query.Where(c => c.createdDate >= DateTime.Parse(qp.startDate));
+            if (!ApiUtils.IsEmpty(qp.endDate))
+                query = query.Where(c => c.createdDate <= DateTime.Parse(qp.endDate));
+            return query.ToList();
         }
 
-        public IEnumerable<Meters> FindAll(QueryParameters qp)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<Meters> FindAllByName(string name)
-        {
-            return _context.Meters.Where(m=>m.name == name);
-        }
     }
 }

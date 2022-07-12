@@ -5,7 +5,6 @@ namespace Meter_API.Repositories.Interface
 {
     public interface IFloorsRepository
     {
-        IEnumerable<Floors> FindAll(QueryParameters qp);
-        IEnumerable<Floors> FindAllByName(string qpName);
+        List<Floors> FindAll(QueryParameters qp);
     }
 }
