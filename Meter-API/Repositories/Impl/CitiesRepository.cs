@@ -23,4 +23,14 @@ public class CitiesRepository : ICitiesRepository
             .ThenInclude(f => f.zones)
             .ThenInclude(z => z.meters);
     }
+
+    public IEnumerable<Cities> FindAllByName(string name)
+    {
+        return _context.Cities.Where(c=>c.name == name)
+            .Include(c => c.facilities)
+            .ThenInclude(f => f.buildings)
+            .ThenInclude(b => b.floors)
+            .ThenInclude(f => f.zones)
+            .ThenInclude(z => z.meters);
+    }
 }

@@ -1,8 +1,7 @@
 ﻿using Meter_API.Domain.requests;
+using Meter_API.Models;
 using Meter_API.Repositories;
-using Meter_API.Repositories.Impl;
 using Meter_API.Repositories.Interface;
-using Microsoft.EntityFrameworkCore;
 
 namespace Meter_API.Facade;
 
@@ -27,36 +26,43 @@ public class MeterFacade : IMeterFacade
         _metersRepository = metersRepository;
     }
 
-    public object? GetSearchDataByInformationAt(string req)
+    public object? findAllByInformationAt(string req)
     {
         return req.ToLower() switch
         {
             "cities" => _citiesRepository.FindAll(),
             "facilities" => _facilitiesRepository.FindAll(),
             "buildings" => _buildingsRepository.FindAll(),
-            "floors" => _facilitiesRepository.FindAll(),
+            "floors" => _floorsRepository.FindAll(),
             "zones" => _zonesRepository.FindAll(),
             "meters" => _metersRepository.FindAll(),
             _ => throw new Exception("Please pass a valid informationAt")
         };
     }
 
-    public object? GetAllSearchData()
+    public IEnumerable<Cities> findAllCitiesData()
     {
         return _citiesRepository.FindAll();
     }
 
-    public object? GetSearchDataByInformationAtAndNameParam(QueryParameters qp)
+    public IEnumerable<Cities> findAllCitiesDataByName(string qpName)
+    {
+        return _citiesRepository.FindAllByName(qpName);
+    }
+
+
+    public object? findAllByInformationAtAndName(QueryParameters qp)
     {
         return qp.informationAt.ToLower() switch
         {
-            "cities" => _context.Cities.FirstOrDefault(s => s != null && qp.name.Equals(s.name)),
-            "facilities" => _context.Facilities.FirstOrDefault(s => s != null && qp.name.Equals(s.name)),
-            "buildings" => _context.Buildings.FirstOrDefault(s => s != null && qp.name.Equals(s.name)),
-            "floors" => _context.Floors.FirstOrDefault(s => s != null && qp.name.Equals(s.name)),
-            "zones" => _context.Zones.FirstOrDefault(s => s != null && qp.name.Equals(s.name)),
-            "meters" => _context.Meters.FirstOrDefault(s => s != null && qp.name.Equals(s.name)),
+            "cities" => _citiesRepository.FindAllByName(qp.name),
+            "facilities" => _facilitiesRepository.FindAllByName(qp.name),
+            "buildings" => _buildingsRepository.FindAllByName(qp.name),
+            "floors" => _floorsRepository.FindAllByName(qp.name),
+            "zones" => _zonesRepository.FindAllByName(qp.name),
+            "meters" => _metersRepository.FindAllByName(qp.name),
             _ => throw new Exception("Please pass a valid informationAt")
         };
     }
+
 }

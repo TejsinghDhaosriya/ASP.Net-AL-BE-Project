@@ -21,5 +21,15 @@ namespace Meter_API.Repositories.Impl
                 .ThenInclude(f => f.zones)
                 .ThenInclude(z => z.meters);
         }
+
+
+        public IEnumerable<Facilities> FindAllByName(string name)
+        {
+            return _context.Facilities.Where(f=>f.name == name)
+                .Include(f => f.buildings)
+                .ThenInclude(b => b.floors)
+                .ThenInclude(f => f.zones)
+                .ThenInclude(z => z.meters);
+        }
     }
 }

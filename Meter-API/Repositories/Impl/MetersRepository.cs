@@ -19,5 +19,10 @@ namespace Meter_API.Repositories.Impl
         {
             return _context.Meters;
         }
+
+        public IEnumerable<Meters> FindAllByName(string name)
+        {
+            return _context.Meters.Where(m=>m.name == name);
+        }
     }
 }

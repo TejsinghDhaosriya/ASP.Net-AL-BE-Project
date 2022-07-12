@@ -1,5 +1,5 @@
 using Meter_API.Domain.requests;
-using Meter_API.Services.Impl;
+using Meter_API.Services.Interface;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Meter_API.Controllers

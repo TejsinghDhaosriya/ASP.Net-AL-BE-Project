@@ -22,5 +22,21 @@ namespace Meter_API.Repositories.Impl
                 .ThenInclude(f => f.zones)
                 .ThenInclude(z => z.meters);
         }
+
+        public IEnumerable<Buildings> FindAllByName(string name)
+        {
+            return _context.Buildings.Where(b=>b.name == name)
+                .Include(b => b.floors)
+                .ThenInclude(f => f.zones)
+                .ThenInclude(z => z.meters);
+        }
+
+        // public IEnumerable<Buildings> FindAllByStartDate(string startDate)
+        // {
+        //     return _context.Buildings.Where(b => b.createdDate >= new DateTime(startDate))
+        //         .Include(b => b.floors)
+        //         .ThenInclude(f => f.zones)
+        //         .ThenInclude(z => z.meters);
+        // }
     }
 }

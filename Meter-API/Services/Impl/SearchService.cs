@@ -1,33 +1,33 @@
 ﻿using Meter_API.Domain.requests;
 using Meter_API.Facade;
 using Meter_API.Repositories;
-using Meter_API.Services.Impl;
+using Meter_API.Services.Interface;
 using Microsoft.EntityFrameworkCore;
 
-namespace Meter_API.Services.Interface;
+namespace Meter_API.Services.Impl;
 
 public class SearchService : ISearchService
 {
-    private readonly MetersDbContext _context;
-    private readonly IMeterFacade _meterRepository;
-    public SearchService(MetersDbContext dbContext, IMeterFacade meterRepository)
+    private readonly IMeterFacade _meterFacade;
+
+    public SearchService(IMeterFacade meterFacade)
     {
-        _context = dbContext;
-        _meterRepository = meterRepository;
+        _meterFacade = meterFacade;
     }
+
 
     public object? Search(QueryParameters qp)
     {
         if (IsEmpty(qp.name) && IsEmpty(qp.informationAt) && IsEmpty(qp.startDate) && IsEmpty(qp.endDate))
-            return _meterRepository.GetAllSearchData();
+            return _meterFacade.findAllCitiesData();
         if (IsEmpty(qp.name) && !IsEmpty(qp.informationAt) && IsEmpty(qp.startDate) && IsEmpty(qp.endDate))
-            return _meterRepository.GetSearchDataByInformationAt(qp.informationAt);
+            return _meterFacade.findAllByInformationAt(qp.informationAt);
         if (!IsEmpty(qp.name) && IsEmpty(qp.informationAt) && IsEmpty(qp.startDate) && IsEmpty(qp.endDate))
-            return _context.Cities.FirstOrDefault(s => s != null && qp.name.Equals(s.name));
+            return _meterFacade.findAllCitiesDataByName(qp.name);
         if (!IsEmpty(qp.name) && !IsEmpty(qp.informationAt) && IsEmpty(qp.startDate) && IsEmpty(qp.endDate))
-            return _meterRepository.GetSearchDataByInformationAtAndNameParam(qp);
+            return _meterFacade.findAllByInformationAtAndName(qp);
 
-        return _meterRepository.GetAllSearchData();
+        return _meterFacade.findAllCitiesData();
     }
 
 

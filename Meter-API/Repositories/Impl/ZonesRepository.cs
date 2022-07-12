@@ -19,5 +19,12 @@ namespace Meter_API.Repositories.Impl
             return _context.Zones
                 .Include(z => z.meters);
         }
+
+
+        public IEnumerable<Zones> FindAllByName(string name)
+        {
+            return _context.Zones.Where(z=>z.name ==name)
+                .Include(z => z.meters);
+        }
     }
 }
