@@ -4,10 +4,10 @@ public class QueryParameters
 {
     public QueryParameters()
     {
-        this.name = "";
-        this.startDate = "";
-        this.endDate = "";
-        this.informationAt = "";
+        name = "";
+        startDate = "";
+        endDate = "";
+        informationAt = "";
     }
 
     public string name { get; set; }
