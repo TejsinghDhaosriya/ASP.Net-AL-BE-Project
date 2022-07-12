@@ -8,5 +8,7 @@
     &lt;TestId&gt;xUnit::4DB0D05D-85FC-4CDE-8FE5-AD163BB0AB9F::net6.0::UnitTests.Facade.MeterFacadeTest.ShouldReturnFloorsData&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::4DB0D05D-85FC-4CDE-8FE5-AD163BB0AB9F::net6.0::UnitTests.Facade.MeterFacadeTest.ShouldReturnZonesData&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::4DB0D05D-85FC-4CDE-8FE5-AD163BB0AB9F::net6.0::UnitTests.Facade.MeterFacadeTest&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::4DB0D05D-85FC-4CDE-8FE5-AD163BB0AB9F::net6.0::UnitTests.Utils.UtilsTest.ShouldCallIsEmptyMethodAndReturnTrueWhenPassedStringIsNull&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::4DB0D05D-85FC-4CDE-8FE5-AD163BB0AB9F::net6.0::UnitTests.Utils.UtilsTest&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
