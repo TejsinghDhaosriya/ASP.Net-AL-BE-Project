@@ -1,4 +1,6 @@
 using Meter_API.Domain.requests;
+using Meter_API.Domain.response;
+using Meter_API.Exceptions;
 using Meter_API.Services.Interface;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,15 +18,19 @@ namespace Meter_API.Controllers
 
 
         [HttpGet("search")]
-        public ActionResult<object>? GetMeters([FromQuery] QueryParameters queryParameters)
+        public ActionResult<MeterResponse>? GetMeters([FromQuery] QueryParameters queryParameters)
         {
             try
             {
-                return _searchService.Search(queryParameters);
+                return Ok(new MeterResponse(_searchService.Search(queryParameters)));
+            }
+            catch (InvalidInputException ex)
+            {
+                return NotFound(new MeterResponse(warning: ex.Message));
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return NotFound(new MeterResponse(error:ex.Message));
             }
         }
     }

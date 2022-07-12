@@ -1,4 +1,5 @@
 ﻿using Meter_API.Domain.requests;
+using Meter_API.Exceptions;
 using Meter_API.Models;
 using Meter_API.Repositories;
 using Meter_API.Repositories.Interface;
@@ -36,7 +37,7 @@ public class MeterFacade : IMeterFacade
             "floors" => _floorsRepository.FindAll(),
             "zones" => _zonesRepository.FindAll(),
             "meters" => _metersRepository.FindAll(),
-            _ => throw new Exception("Please pass a valid informationAt")
+            _ => throw new InvalidInputException("Please pass a valid informationAt")
         };
     }
 
@@ -61,7 +62,7 @@ public class MeterFacade : IMeterFacade
             "floors" => _floorsRepository.FindAllByName(qp.name),
             "zones" => _zonesRepository.FindAllByName(qp.name),
             "meters" => _metersRepository.FindAllByName(qp.name),
-            _ => throw new Exception("Please pass a valid informationAt")
+            _ => throw new InvalidInputException("Please pass a valid informationAt")
         };
     }
 
