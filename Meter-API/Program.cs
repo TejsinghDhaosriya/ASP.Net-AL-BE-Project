@@ -1,4 +1,7 @@
+using Meter_API.Facade;
 using Meter_API.Repositories;
+using Meter_API.Repositories.Impl;
+using Meter_API.Repositories.Interface;
 using Meter_API.Services.Impl;
 using Meter_API.Services.Interface;
 using Microsoft.EntityFrameworkCore;
@@ -14,6 +17,13 @@ builder.Services.AddSwaggerGen();
 
 //per request object
 builder.Services.AddScoped<ISearchService, SearchService>();
+builder.Services.AddScoped<IMeterFacade, MeterFacade>();
+builder.Services.AddScoped<ICitiesRepository, CitiesRepository>();
+builder.Services.AddScoped<IFacilitiesRepository, FacilitiesRepository>();
+builder.Services.AddScoped<IBuildingsRepository, BuildingsRepository>();
+builder.Services.AddScoped<IFloorsRepository, FloorsRepository>();
+builder.Services.AddScoped<IZonesRepository, ZonesRepository>();
+builder.Services.AddScoped<IMetersRepository,MetersRepository>();
 
 // Connect to PostgreSQL Database
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
