@@ -1,4 +1,5 @@
-﻿using Meter_API.Models;
+﻿using Meter_API.Domain.requests;
+using Meter_API.Models;
 using Meter_API.Repositories.Interface;
 using Microsoft.EntityFrameworkCore;
 
@@ -18,6 +19,11 @@ namespace Meter_API.Repositories.Impl
         public IEnumerable<Meters> FindAll()
         {
             return _context.Meters;
+        }
+
+        public IEnumerable<Meters> FindAll(QueryParameters qp)
+        {
+            throw new NotImplementedException();
         }
 
         public IEnumerable<Meters> FindAllByName(string name)

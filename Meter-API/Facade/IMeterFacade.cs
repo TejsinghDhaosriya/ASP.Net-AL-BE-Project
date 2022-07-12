@@ -9,5 +9,6 @@ namespace Meter_API.Facade
         object findAllByInformationAt(string req);
         IEnumerable<Cities> findAllCitiesData();
         IEnumerable<Cities> findAllCitiesDataByName(string qpName);
+        object? findAllByParam(QueryParameters qp);
     }
 }

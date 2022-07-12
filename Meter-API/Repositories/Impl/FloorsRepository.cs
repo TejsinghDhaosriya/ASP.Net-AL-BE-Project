@@ -1,4 +1,5 @@
-﻿using Meter_API.Models;
+﻿using Meter_API.Domain.requests;
+using Meter_API.Models;
 using Meter_API.Repositories.Interface;
 using Microsoft.EntityFrameworkCore;
 
@@ -21,6 +22,11 @@ namespace Meter_API.Repositories.Impl
                 .ThenInclude(z => z.meters);
         }
 
+
+        public IEnumerable<Floors> FindAll(QueryParameters qp)
+        {
+            throw new NotImplementedException();
+        }
 
         public IEnumerable<Floors> FindAllByName(string name)
         {
