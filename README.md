@@ -14,3 +14,10 @@
 ```
 dotnet ef database update MigrationV1 --project Meter-API.csproj
 ``` 
+
+
+
+####  DOCKER-POSTGRES CONTAINER CREATE/UP
+```
+docker-compose up
+```
