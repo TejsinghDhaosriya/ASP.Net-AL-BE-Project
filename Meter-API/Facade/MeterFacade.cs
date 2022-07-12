@@ -27,23 +27,39 @@ public class MeterFacade : IMeterFacade
         _metersRepository = metersRepository;
     }
 
-    public object? findAllByInformationAt(string req)
+    public object? findAllByParam(QueryParameters qp)
     {
-        return req.ToLower() switch
+        return qp.informationAt.ToLower() switch
         {
-            "cities" => _citiesRepository.FindAll(),
-            "facilities" => _facilitiesRepository.FindAll(),
-            "buildings" => _buildingsRepository.FindAll(),
-            "floors" => _floorsRepository.FindAll(),
-            "zones" => _zonesRepository.FindAll(),
-            "meters" => _metersRepository.FindAll(),
+            "cities" => _citiesRepository.FindAll(qp),
+            "facilities" => _facilitiesRepository.FindAll(qp),
+            "buildings" => _buildingsRepository.FindAll(qp),
+            "floors" => _floorsRepository.FindAll(qp),
+            "zones" => _zonesRepository.FindAll(qp),
+            "meters" => _metersRepository.FindAll(qp),
             _ => throw new InvalidInputException("Please pass a valid informationAt")
         };
     }
 
+    public object? findAllByInformationAt(string req)
+    {
+        // return req.ToLower() switch
+        // {
+        //     "cities" => _citiesRepository.FindAll(),
+        //     "facilities" => _facilitiesRepository.FindAll(),
+        //     "buildings" => _buildingsRepository.FindAll(),
+        //     "floors" => _floorsRepository.FindAll(),
+        //     "zones" => _zonesRepository.FindAll(),
+        //     "meters" => _metersRepository.FindAll(),
+        //     _ => throw new InvalidInputException("Please pass a valid informationAt")
+        // };
+
+        return null;
+    }
+
     public IEnumerable<Cities> findAllCitiesData()
     {
-        return _citiesRepository.FindAll();
+        return null;
     }
 
     public IEnumerable<Cities> findAllCitiesDataByName(string qpName)

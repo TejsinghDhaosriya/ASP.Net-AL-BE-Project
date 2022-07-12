@@ -1,4 +1,5 @@
 using Meter_API.Facade;
+using Meter_API.Middleware;
 using Meter_API.Repositories;
 using Meter_API.Repositories.Impl;
 using Meter_API.Repositories.Interface;
@@ -46,6 +47,6 @@ if (app.Environment.IsDevelopment())
 app.UseAuthorization();
 
 app.MapControllers();
-
+app.ConfigureExceptionHandler();
 app.Run();
 

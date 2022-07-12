@@ -1,4 +1,5 @@
-﻿using Meter_API.Models;
+﻿using Meter_API.Domain.requests;
+using Meter_API.Models;
 using Meter_API.Repositories.Interface;
 using Microsoft.EntityFrameworkCore;
 
@@ -14,7 +15,7 @@ namespace Meter_API.Repositories.Impl
         }
 
 
-        public IEnumerable<Zones> FindAll()
+        public IEnumerable<Zones> FindAll(QueryParameters queryParameters)
         {
             return _context.Zones
                 .Include(z => z.meters);
