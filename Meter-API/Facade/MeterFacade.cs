@@ -32,7 +32,8 @@ public class MeterFacade : IMeterFacade
             "floors" => _floorsRepository.FindAll(qp),
             "zones" => _zonesRepository.FindAll(qp),
             "meters" => _metersRepository.FindAll(qp),
-            _ => throw new InvalidInputException("Please pass a valid informationAt")
+            _ => throw new InvalidInputException("Please pass a valid informationAt, " +
+                                                 "accepted values are [cities,facilities, buildings, floors, zones, meters]")
         };
     }
 
