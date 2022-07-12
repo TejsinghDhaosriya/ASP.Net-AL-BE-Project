@@ -9,7 +9,7 @@ using Moq;
 
 namespace UnitTests.Controllers
 {
-    public class UnitTest1
+    public class ControllerTests
     {
 
         [Fact]
