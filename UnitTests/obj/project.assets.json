@@ -6994,11 +6994,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\tej\\workArea\\Asp.Net\\METER-API\\UnitTests\\UnitTests.csproj",
+      "projectUniqueName": "C:\\Users\\tej\\workArea\\Asp.Net\\ASP.Net-AL-BE-Project\\UnitTests\\UnitTests.csproj",
       "projectName": "UnitTests",
-      "projectPath": "C:\\Users\\tej\\workArea\\Asp.Net\\METER-API\\UnitTests\\UnitTests.csproj",
+      "projectPath": "C:\\Users\\tej\\workArea\\Asp.Net\\ASP.Net-AL-BE-Project\\UnitTests\\UnitTests.csproj",
       "packagesPath": "C:\\Users\\tej\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\tej\\workArea\\Asp.Net\\METER-API\\UnitTests\\obj\\",
+      "outputPath": "C:\\Users\\tej\\workArea\\Asp.Net\\ASP.Net-AL-BE-Project\\UnitTests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\tej\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -7015,8 +7015,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\tej\\workArea\\Asp.Net\\METER-API\\Meter-API\\Meter-API.csproj": {
-              "projectPath": "C:\\Users\\tej\\workArea\\Asp.Net\\METER-API\\Meter-API\\Meter-API.csproj"
+            "C:\\Users\\tej\\workArea\\Asp.Net\\ASP.Net-AL-BE-Project\\Meter-API\\Meter-API.csproj": {
+              "projectPath": "C:\\Users\\tej\\workArea\\Asp.Net\\ASP.Net-AL-BE-Project\\Meter-API\\Meter-API.csproj"
             }
           }
         }
