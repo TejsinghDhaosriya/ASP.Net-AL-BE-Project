@@ -22,18 +22,21 @@ public class MeterFacade : IMeterFacade
         _metersRepository = metersRepository;
     }
 
-    public object? findAllByParam(QueryParameters qp)
+    public List<object> findAllByParam(QueryParameters qp)
     {
-        return qp.informationAt.ToLower() switch
+        return new List<object>
         {
-            "cities" => _citiesRepository.FindAll(qp),
-            "facilities" => _facilitiesRepository.FindAll(qp),
-            "buildings" => _buildingsRepository.FindAll(qp),
-            "floors" => _floorsRepository.FindAll(qp),
-            "zones" => _zonesRepository.FindAll(qp),
-            "meters" => _metersRepository.FindAll(qp),
-            _ => throw new InvalidInputException("Please pass a valid informationAt, " +
-                                                 "accepted values are [cities,facilities, buildings, floors, zones, meters]")
+            qp.informationAt.ToLower() switch
+            {
+                "cities" => _citiesRepository.FindAll(qp),
+                "facilities" => _facilitiesRepository.FindAll(qp),
+                "buildings" => _buildingsRepository.FindAll(qp),
+                "floors" => _floorsRepository.FindAll(qp),
+                "zones" => _zonesRepository.FindAll(qp),
+                "meters" => _metersRepository.FindAll(qp),
+                _ => throw new InvalidInputException("Please pass a valid informationAt, " +
+                                                     "accepted values are [cities,facilities, buildings, floors, zones, meters]")
+            }
         };
     }
 

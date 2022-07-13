@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tej\\workArea\\Asp.Net\\METER-API\\Meter-API\\Meter-API.csproj": {}
+    "C:\\Users\\tej\\workArea\\Asp.Net\\ASP.Net-AL-BE-Project\\Meter-API\\Meter-API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tej\\workArea\\Asp.Net\\METER-API\\Meter-API\\Meter-API.csproj": {
+    "C:\\Users\\tej\\workArea\\Asp.Net\\ASP.Net-AL-BE-Project\\Meter-API\\Meter-API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tej\\workArea\\Asp.Net\\METER-API\\Meter-API\\Meter-API.csproj",
+        "projectUniqueName": "C:\\Users\\tej\\workArea\\Asp.Net\\ASP.Net-AL-BE-Project\\Meter-API\\Meter-API.csproj",
         "projectName": "Meter-API",
-        "projectPath": "C:\\Users\\tej\\workArea\\Asp.Net\\METER-API\\Meter-API\\Meter-API.csproj",
+        "projectPath": "C:\\Users\\tej\\workArea\\Asp.Net\\ASP.Net-AL-BE-Project\\Meter-API\\Meter-API.csproj",
         "packagesPath": "C:\\Users\\tej\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tej\\workArea\\Asp.Net\\METER-API\\Meter-API\\obj\\",
+        "outputPath": "C:\\Users\\tej\\workArea\\Asp.Net\\ASP.Net-AL-BE-Project\\Meter-API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\tej\\AppData\\Roaming\\NuGet\\NuGet.Config",

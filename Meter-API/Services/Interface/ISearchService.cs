@@ -5,6 +5,6 @@ namespace Meter_API.Services.Interface
     public interface ISearchService
     {
 
-        object? Search(QueryParameters queryParameters);
+        List<object> Search(QueryParameters queryParameters);
     }
 }
