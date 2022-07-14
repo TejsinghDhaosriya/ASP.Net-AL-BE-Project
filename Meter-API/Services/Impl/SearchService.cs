@@ -16,7 +16,7 @@ public class SearchService : ISearchService
     }
 
 
-    public List<object> Search(QueryParameters qp)
+    public object? Search(QueryParameters qp)
     {
         if (ApiUtils.IsEmpty(qp.informationAt))
             qp.informationAt="cities";
