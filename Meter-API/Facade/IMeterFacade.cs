@@ -4,6 +4,6 @@ namespace Meter_API.Facade
 {
     public interface IMeterFacade
     {
-        List<object> findAllByParam(QueryParameters qp);
+        object? findAllByParam(QueryParameters qp);
     }
 }
