@@ -20,6 +20,18 @@
           "build/netstandard1.0/coverlet.collector.targets": {}
         }
       },
+      "FakeItEasy/7.3.1": {
+        "type": "package",
+        "dependencies": {
+          "Castle.Core": "4.3.1"
+        },
+        "compile": {
+          "lib/net5.0/FakeItEasy.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/FakeItEasy.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore/6.0.5": {
         "type": "package",
         "dependencies": {
@@ -2132,6 +2144,26 @@
         "coverlet-icon.png",
         "coverlet.collector.3.1.2.nupkg.sha512",
         "coverlet.collector.nuspec"
+      ]
+    },
+    "FakeItEasy/7.3.1": {
+      "sha512": "ldJSgPLzVdN7MxmaZhdcnAcUya185Eqbqyx5tLjZHATI80UfLnSkQgQczD72qAdx8l3CUkWzNC43zrtnrz/jGQ==",
+      "type": "package",
+      "path": "fakeiteasy/7.3.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fakeiteasy.7.3.1.nupkg.sha512",
+        "fakeiteasy.nuspec",
+        "images/FakeItEasy.png",
+        "lib/net45/FakeItEasy.dll",
+        "lib/net45/FakeItEasy.xml",
+        "lib/net5.0/FakeItEasy.dll",
+        "lib/net5.0/FakeItEasy.xml",
+        "lib/netstandard2.0/FakeItEasy.dll",
+        "lib/netstandard2.0/FakeItEasy.xml",
+        "lib/netstandard2.1/FakeItEasy.dll",
+        "lib/netstandard2.1/FakeItEasy.xml"
       ]
     },
     "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore/6.0.5": {
@@ -6980,6 +7012,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "FakeItEasy >= 7.3.1",
       "Meter-API >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 17.1.0",
       "Moq >= 4.18.1",
@@ -6994,11 +7027,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\tej\\workArea\\Asp.Net\\METER-API\\UnitTests\\UnitTests.csproj",
+      "projectUniqueName": "C:\\Users\\tej\\workArea\\ASP.Net-AL-BE-Project\\UnitTests\\UnitTests.csproj",
       "projectName": "UnitTests",
-      "projectPath": "C:\\Users\\tej\\workArea\\Asp.Net\\METER-API\\UnitTests\\UnitTests.csproj",
+      "projectPath": "C:\\Users\\tej\\workArea\\ASP.Net-AL-BE-Project\\UnitTests\\UnitTests.csproj",
       "packagesPath": "C:\\Users\\tej\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\tej\\workArea\\Asp.Net\\METER-API\\UnitTests\\obj\\",
+      "outputPath": "C:\\Users\\tej\\workArea\\ASP.Net-AL-BE-Project\\UnitTests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\tej\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -7015,8 +7048,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\tej\\workArea\\Asp.Net\\METER-API\\Meter-API\\Meter-API.csproj": {
-              "projectPath": "C:\\Users\\tej\\workArea\\Asp.Net\\METER-API\\Meter-API\\Meter-API.csproj"
+            "C:\\Users\\tej\\workArea\\ASP.Net-AL-BE-Project\\Meter-API\\Meter-API.csproj": {
+              "projectPath": "C:\\Users\\tej\\workArea\\ASP.Net-AL-BE-Project\\Meter-API\\Meter-API.csproj"
             }
           }
         }
@@ -7031,6 +7064,10 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "FakeItEasy": {
+            "target": "Package",
+            "version": "[7.3.1, )"
+          },
           "Microsoft.NET.Test.Sdk": {
             "target": "Package",
             "version": "[17.1.0, )"
