@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "UnitTests/1.0.0": {
         "dependencies": {
+          "FakeItEasy": "7.3.1",
           "Meter-API": "1.0.0",
           "Microsoft.NET.Test.Sdk": "17.1.0",
           "Moq": "4.18.1",
@@ -31,6 +32,17 @@
         }
       },
       "coverlet.collector/3.1.2": {},
+      "FakeItEasy/7.3.1": {
+        "dependencies": {
+          "Castle.Core": "5.0.0"
+        },
+        "runtime": {
+          "lib/net5.0/FakeItEasy.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.3.1.0"
+          }
+        }
+      },
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore/6.0.5": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Relational": "6.0.5"
@@ -1330,6 +1342,13 @@
       "sha512": "sha512-wuLDIDKD5XMt0A7lE31JPenT7QQwZPFkP5rRpdJeblyXZ9MGLI8rYjvm5fvAKln+2/X+4IxxQDxBtwdrqKNLZw==",
       "path": "coverlet.collector/3.1.2",
       "hashPath": "coverlet.collector.3.1.2.nupkg.sha512"
+    },
+    "FakeItEasy/7.3.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ldJSgPLzVdN7MxmaZhdcnAcUya185Eqbqyx5tLjZHATI80UfLnSkQgQczD72qAdx8l3CUkWzNC43zrtnrz/jGQ==",
+      "path": "fakeiteasy/7.3.1",
+      "hashPath": "fakeiteasy.7.3.1.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore/6.0.5": {
       "type": "package",
